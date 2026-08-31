@@ -1,0 +1,79 @@
+/*
+  Baby Investments — premium fintech theme
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: clip;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+h1, h2, h3, h4, h5, .font-display {
+  font-family: "Poppins", sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Deep Navy primary */
+    --primary: 222 60% 16%;
+    --primary-foreground: 0 0% 100%;
+    /* Royal Blue secondary */
+    --secondary: 222 74% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 222 20% 96%;
+    --muted-foreground: 222 12% 42%;
+    /* Gold accent */
+    --accent: 42 72% 52%;
+    --accent-foreground: 222 60% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 90%;
+    --input: 222 20% 90%;
+    --ring: 222 74% 45%;
+    --radius: 0.9rem;
+
+    --navy: 222 60% 13%;
+    --royal: 222 74% 45%;
+    --gold: 42 72% 52%;
+  }
+}
+
+@layer utilities {
+  .container-wide { @apply mx-auto w-full max-w-[80rem] px-5 sm:px-8; }
+  .container-narrow { @apply mx-auto w-full max-w-[56rem] px-5 sm:px-8; }
+  .text-gold { color: hsl(var(--gold)); }
+  .bg-navy { background-color: hsl(var(--navy)); }
+  .text-navy { color: hsl(var(--navy)); }
+  .text-royal { color: hsl(var(--royal)); }
+  .gold-gradient { background: linear-gradient(90deg, hsl(42 72% 58%), hsl(38 62% 44%)); }
+  .navy-gradient { background: linear-gradient(150deg, hsl(222 62% 16%), hsl(222 70% 26%)); }
+  .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+}
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease-out, transform .7s ease-out; }
+.reveal.in-view { opacity: 1; transform: none; }
+.reveal-l { opacity: 0; transform: translateX(-32px); transition: opacity .7s ease-out, transform .7s ease-out; }
+.reveal-l.in-view { opacity: 1; transform: none; }
+.reveal-r { opacity: 0; transform: translateX(32px); transition: opacity .7s ease-out, transform .7s ease-out; }
+.reveal-r.in-view { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-l, .reveal-r { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+::selection { background: hsl(var(--gold) / 0.3); }
