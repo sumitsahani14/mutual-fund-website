@@ -77,3 +77,38 @@ h1, h2, h3, h4, h5, .font-display {
 }
 
 ::selection { background: hsl(var(--gold) / 0.3); }
+
+/* Larger, easier-to-drag thumb for range sliders (calculators) on touch devices */
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 9999px;
+  background: hsl(var(--royal));
+  border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+.range-input::-moz-range-thumb {
+  height: 22px;
+  width: 22px;
+  border-radius: 9999px;
+  background: hsl(var(--royal));
+  border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+.range-input::-moz-range-track {
+  height: 8px;
+  border-radius: 9999px;
+  background: hsl(var(--muted));
+}
+
+/* Prevent iOS Safari from auto-zooming the page when a form field is focused
+   (it zooms whenever a focused input's font-size is below 16px) */
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
